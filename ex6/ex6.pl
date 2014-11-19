@@ -19,5 +19,5 @@ even(succ(succ(X))) :- even(X).
 odd(succ(X)) :- even(X).
 
 % Subtraction
-subtract(X, 0, X) :- true.
-subtract(succ(X), succ(Y), succ(Z)) :- subtract(X, Y, Z).
+subtract(X, 0, X).
+subtract(X, succ(Y), Z) :- subtract(X, Y, succ(Z)).
