@@ -1,7 +1,7 @@
 :- module(ex7,
        [ sublist/2,
          with/3,
-         shuffled/2 ]).
+         shuffled/2]).
 
 % sublist(S, L) : S is a sublist of list L.
 % Assumes L is instantiated/ground (will be a concrete list).
