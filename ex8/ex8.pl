@@ -14,6 +14,9 @@ tree(X, Left, Right) :- atom(X).
 % tree(bob, tree(alice, tree(empty), tree(empty)), tree(empty)).
 
 % contains(X, Elem)
-
+contains(tree(Elem, L, R), Elem).
+contains(tree(RT, L, R), Elem) :- contains(L, Elem).
+contains(tree(RT, L, R), Elem) :- contains(R, Elem).
 
 % preorder(X, List)
+% TODO
