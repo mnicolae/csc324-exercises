@@ -19,4 +19,5 @@ contains(tree(RT, L, R), Elem) :- contains(L, Elem).
 contains(tree(RT, L, R), Elem) :- contains(R, Elem).
 
 % preorder(X, List)
-% TODO
+preorder(tree(empty), []).
+preorder(tree(X, L, R), Xs) :- preorder(L, Ls), preorder(R, Rs), append([X|Ls],Rs, Xs).
