@@ -122,11 +122,16 @@ isEmpty s = (s == [], s)
 -- 1. removeSecond: remove (but don't return) the second-highest item
 -- (i.e., the item below the top item on the stack)
 removeSecond :: StackOp ()
-removeSecond = undefined
+removeSecond = 
+	pop >~> \x ->
+	pop >.> push x
 
 -- 2. removeThird: remove the third-highest item
 removeThird :: StackOp ()
-removeThird = undefined
+removeThird =
+	pop >~> \x ->
+	pop >~> \y ->
+	pop >.> push y >.> push x
 
 -- 3. removeNth: remove the n-th highest item
 removeNth :: Integer -> StackOp ()
